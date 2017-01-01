@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html ng-app="vegefruit66" ng-controller="mainController">
+<head>
+	<link rel="shortcut icon" href="./images/favicon.ico" >
+
+	<script type="text/javascript" src="./js/lib/angular.js"></script>
+	<script type="text/javascript" src="./js/layout.js"></script>
+
+	<meta name="{{meta.name}}" content="{{meta.content}}" ng-repeat="meta in $root.header.metas">
+
+	<title>{{$root.header.title}}</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/layout.css">
+
+	<!-- Load specific javascript or css -->
+	<!-- End to load -->
+</head>
+<body>
+	<div ng-include="$root.includePages.top"></div>
+	
+	<!-- index start -->
+	
+	<!-- end index -->
+
+	<div ng-include="$root.includePages.footer"></div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html ng-app="vegefruit66" ng-controller="mainController">
+<head>
+	<link rel="shortcut icon" href="./images/favicon.ico" >
+
+	<script type="text/javascript" src="./js/lib/angular.js"></script>
+	<script type="text/javascript" src="./js/layout.js"></script>
+
+	<meta name="{{meta.name}}" content="{{meta.content}}" ng-repeat="meta in $root.header.metas">
+
+	<title>{{$root.header.title}}</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/layout.css">
+
+
+	<!-- Load specific javascript or css -->
+	<!-- End to load -->
+</head>
+<body>
+	<!-- ng-include="$root.includePages.top" -->
+	<div class="menu" ng-class="{fixedMenu:isChangeClass}" scroll>
+		<a href="index.html"><div class="logo"></div></a>
+		<ul class="lstMenu">
+			<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList"><li>{{menu.name}}</li></a>
+		</ul>
+		<a href="https://www.facebook.com/vegetable66/" target="_new" class="fa fa-facebook" id="fbLink"></a>
+		<a href="#" id="buyNow">立即購買</a>
+	</div>
+	
+	<!-- index start -->
+	<div class="body"></div>
+	<!-- end index -->
+
+	<!-- ng-include="$root.includePages.footer" -->
+	<div class="footer">
+		<ul class="socialLinks">
+			<li><a target="_new" href="https://www.facebook.com/vegetable66/"><i class="fa fa-facebook-square"></i></a></li>
+			<li><a target="_new" href="#"><i class="fa fa-youtube-play"></i></a></li>
+			<li><a target="_new" href="#"><i class="fa fa-flickr"></i></a></li>
+			<li><a target="_new" href="#"><i class="fa fa-skype"></i></a></li>
+		</ul>
+		<hr/>
+		<div class="footerLogo"></div>
+		<h5>蔬果溜溜</h5>
+		<p>永遠只為您著想。<br>新鮮蔬果、產地直送、品質把關<br>用心經營、資訊公開、社會責任、回饋消費者、回饋農民</p>
+		<ul class="copyright">
+			<li>&copy; 著作版權 2016 蔬果溜溜.</li> 
+			<li>Design by 蔬果溜溜.</li>
+		</ul>
+	</div>
+</body>
+</html>
