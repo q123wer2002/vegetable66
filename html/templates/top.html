@@ -1,0 +1,6 @@
+<a href="index.html"><div class="logo"></div></a>
+<ul class="lstMenu">
+	<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList" ng-init="$root.StyleTargetMenu(menu)" ng-class="{selectedMenu:menu.isSelected}"><li>{{menu.name}}</li></a>
+</ul>
+<a href="https://www.facebook.com/vegetable66/" target="_new" class="fa fa-facebook" id="fbLink"></a>
+<a href="shopping.html" id="buyNow">立即購買</a>

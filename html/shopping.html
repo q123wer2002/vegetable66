@@ -14,41 +14,35 @@
 
 
 	<!-- Load specific javascript or css -->
-	<link rel="stylesheet" type="text/css" href="./css/shopping.html">
+	<link rel="stylesheet" type="text/css" href="./css/shopping.css">
+	<script type="text/javascript" src="./js/shopping.js"></script>
 	<!-- End to load -->
 </head>
-<body>
+<body ng-controller="shoppingController">
 	<!-- ng-include="$root.includePages.top" -->
-	<div class="menu" ng-class="{fixedMenu:isChangeClass}" scroll>
-		<a href="index.html"><div class="logo"></div></a>
-		<ul class="lstMenu">
-			<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList" ng-init="$root.StyleTargetMenu(menu)" ng-class="{selectedMenu:menu.isSelected}"><li>{{menu.name}}</li></a>
-		</ul>
-		<a href="https://www.facebook.com/vegetable66/" target="_new" class="fa fa-facebook" id="fbLink"></a>
-		<a href="shopping.html" id="buyNow">立即購買</a>
-	</div>
+	<div class="menu" ng-include="$root.includePages.top" ng-class="{fixedMenu:isChangeClass}" scroll></div>
 	
 	<!-- index start -->
 	<div class="body">
+		<section class="banner">
+			<p><span class="redFront">歲末年前</span>主打<br>茂谷蜜柑</p>
+		</section>
+		<section id="detail">
+			<p>古坑沈媽媽的茂谷蜜柑，<span class="redFront">產地直送沈媽媽的栽種方式堅持不用除草劑</span>，一個月需人工割草一次，並保留草皮當做保濕用，使茂谷蜜柑不容易自行掉落下來。較費工夫，這也是沈媽媽的茂谷蜜柑相較好吃的原因！<br>今年產量大減，約去年的四成，今年茂谷柑價格也較往年高，<span class="redFront">出貨持續到元宵前，賣完就沒了~</span><br>按訂單順序出貨，<u>下單付款後當天採收寄送(下午三點前下單付款，當天出貨，正常情況下隔天送達)</u></p>
+			<ul class="optionDiv">
+				<a href="" ng-repeat="(key,value) in objOptions"><li>
+					<h2>{{value.title}}</h2>
+					<img src="./images/shopping/orange/{{value.photo}}" />
+					<br>
+					<p>{{value.detail}}</p>
+				</li></a>
+			</ul>
+			
+		</section>
 	</div>
 	<!-- end index -->
 
 	<!-- ng-include="$root.includePages.footer" -->
-	<div class="footer">
-		<ul class="socialLinks">
-			<li><a target="_new" href="https://www.facebook.com/vegetable66/"><i class="fa fa-facebook-square"></i></a></li>
-			<li><a target="_new" href="#"><i class="fa fa-youtube-play"></i></a></li>
-			<li><a target="_new" href="#"><i class="fa fa-flickr"></i></a></li>
-			<li><a target="_new" href="#"><i class="fa fa-skype"></i></a></li>
-		</ul>
-		<hr/>
-		<div class="footerLogo"></div>
-		<h5>蔬果溜溜</h5>
-		<p>永遠只為您著想。<br>新鮮蔬果、產地直送、品質把關<br>用心經營、資訊公開、社會責任、回饋消費者、回饋農民</p>
-		<ul class="copyright">
-			<li>&copy; 著作版權 2016 蔬果溜溜.</li> 
-			<li>Design by 蔬果溜溜.</li>
-		</ul>
-	</div>
+	<div class="footer" ng-include="$root.includePages.footer"></div>
 </body>
 </html>

@@ -1,0 +1,49 @@
+.body{width: 100%}
+section{
+	width: 100%;
+	min-height:400px;
+	margin: 0px 0px 50px 0px;
+}
+.banner{
+	background: url("./../images/shopping/orange/banner.jpg");
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.banner p{
+	font-size: 65px;
+	color: white;
+	font-weight: 900;
+	float: left;
+	margin: 100px 0px 0px 30%;
+	text-align: center;
+}
+#detail{
+	width: 90%;
+	margin: auto;
+}
+.redFront{
+	color:#C00000;
+	font-weight: 900;
+}
+.optionDiv{
+	list-style: none;
+	width: 90%;
+	margin: 30px auto 0 auto;
+}
+.optionDiv a{color:#000;}
+.optionDiv li{
+	width: 25%;
+	margin: 0 1.5%;
+	padding: 20px 2.5%;
+	display: inline-block;
+	text-align: center;
+	border:1px solid #FC7D26;
+}
+.optionDiv img{
+	max-width: 100%;
+	max-height: 210px;
+}
+.optionDiv a:hover li{
+	background: #FF9851;
+}
