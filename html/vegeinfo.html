@@ -3,6 +3,7 @@
 <head>
 	<link rel="shortcut icon" href="./images/favicon.ico" >
 
+	<script type="text/javascript" src="./js/lib/jquery.js"></script>
 	<script type="text/javascript" src="./js/lib/angular.js"></script>
 	<script type="text/javascript" src="./js/layout.js"></script>
 
@@ -14,14 +15,16 @@
 
 
 	<!-- Load specific javascript or css -->
+	<script type="text/javascript" src="./js/vegeinfo.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/vegeinfo.css">
 	<!-- End to load -->
 </head>
-<body>
+<body ng-controller="vegeinfoController">
 	<!-- ng-include="$root.includePages.top" -->
 	<div class="menu" ng-class="{fixedMenu:isChangeClass}" scroll>
 		<a href="index.html"><div class="logo"></div></a>
 		<ul class="lstMenu">
-			<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList" ng-init="$root.StyleTargetMenu(menu)" ng-class="{selectedMenu:menu.isSelected}"><li>{{menu.name}}</li></a>
+			<a href="{{menu.link}}" ng-repeat="(key,menu) in $root.objMenuList" ng-init="$root.StyleTargetMenu(menu)" ng-class="{selectedMenu:menu.isSelected}"><li>{{menu.name}}</li></a>
 		</ul>
 		<a href="https://www.facebook.com/vegetable66/" target="_new" class="fa fa-facebook" id="fbLink"></a>
 		<a href="shopping.html" id="buyNow">立即購買</a>
@@ -29,6 +32,17 @@
 	
 	<!-- index start -->
 	<div class="body">
+		<div class="title">
+			<h1>蔬果小學堂</h1>
+			<p>定時補充各種蔬果知識，讓您能更快速獲取蔬果資訊</p>
+		</div>
+		<section>
+			<ul class="vegeSelection" ng-init="fnInitVegeSelect()">
+				<a href="javascript:;"><li ng-repeat="vege in aryVegeSelect" ng-style="vege.Style" title="觀看{{vege.name}}">
+					<p>{{vege.name}}</p>
+				</li></a>
+			</ul>
+		</section>
 	</div>
 	<!-- end index -->
 

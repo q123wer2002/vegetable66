@@ -10,25 +10,36 @@
 
 	<title>{{$root.header.title}}</title>
 
-	<link rel="stylesheet" type="text/css" href="./css/layout.css">
-
-
 	<!-- Load specific javascript or css -->
+	<script type="text/javascript" src="./js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/layout.css">
 	<!-- End to load -->
 </head>
-<body>
+<body ng-controller="indexController">
 	<!-- ng-include="$root.includePages.top" -->
 	<div class="menu" ng-class="{fixedMenu:isChangeClass}" scroll>
 		<a href="index.html"><div class="logo"></div></a>
 		<ul class="lstMenu">
-			<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList"><li>{{menu.name}}</li></a>
+			<a href="{{menu.link}}" ng-repeat="menu in $root.objMenuList" ng-init="$root.StyleTargetMenu(menu)" ng-class="{selectedMenu:menu.isSelected}"><li>{{menu.name}}</li></a>
 		</ul>
 		<a href="https://www.facebook.com/vegetable66/" target="_new" class="fa fa-facebook" id="fbLink"></a>
-		<a href="#" id="buyNow">立即購買</a>
+		<a href="shopping.html" id="buyNow">立即購買</a>
 	</div>
 	
 	<!-- index start -->
-	<div class="body"></div>
+	<div class="body">
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<section class="banner">
+			<p>蔬果溜溜<br>
+				<span style="font-size: 30px;">最貼近農民、也最懂您的心</span>
+			</p>
+		</section>
+		<section class="feature">
+			<ul class="featureList">
+				<li></li>
+			</ul>
+		</section>
+	</div>
 	<!-- end index -->
 
 	<!-- ng-include="$root.includePages.footer" -->

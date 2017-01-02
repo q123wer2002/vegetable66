@@ -1,0 +1,23 @@
+/* */
+
+.body{width: 100%}
+section{
+	width: 100%;
+	min-height:400px;
+}
+.banner{
+	background: url("./../images/index/banner.png");
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.banner p{
+	font-size: 65px;
+	color: white;
+	font-weight: 900;
+	float: left;
+	margin: 100px 0px 0px 30%;
+}
+.feature{
+	
+}

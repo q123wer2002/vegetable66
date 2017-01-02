@@ -1,0 +1,44 @@
+/* */
+
+.body{width: 100%}
+section{
+	width: 100%;
+	min-height:400px;
+}
+
+.title{
+	text-align: center;
+	margin: 0px auto 50px auto;
+	color:black;
+	font-weight: 800;
+}
+
+.vegeSelection{
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.vegeSelection li{
+	width: 20%;
+	min-width: 200px;
+	min-height: 200px;
+	display: inline-block;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(100%);
+}
+.vegeSelection li p{
+	color: #fff;
+	font-size: 45px;
+	font-weight: 800;
+	float: left;
+	margin: 70% 0;
+}
+.vegeSelection li:hover{
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+	filter: grayscale(0%);
+}
+.vegeSelection li:hover p{
+	color:#C00000;
+	text-shadow: 2px 2px #548235;
+}
