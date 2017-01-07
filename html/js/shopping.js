@@ -22,4 +22,11 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 			photo : "option3.jpg",
 		},
 	};
+
+	//video
+	$scope.isShowVideo = false;
+	$scope.fnChangeShowVideo = function(){
+		$scope.isShowVideo = !$scope.isShowVideo;
+		jQuery(".videoPage").css('display','block');
+	}
 });

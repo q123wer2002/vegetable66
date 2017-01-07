@@ -19,11 +19,25 @@ vegefruit66.controller('mainController', function($scope, $rootScope){
 		footer : "./templates/footer.html",
 	};
 
+		//script
+		var objPreLoadScript = {
+			jquery : {src:"./js/lib/jquery.js"},
+		};
+		$rootScope.fnPreLoadScript = function(){
+			for( var script in objPreLoadScript ){
+				var js = document.createElement("script");
+				js.type = "text/javascript";
+				js.src = objPreLoadScript[script].src;
+				document.body.appendChild(js);
+			}
+		}
+
 	//menu list
 	$rootScope.objMenuList = {
-		vegeinfo : {name:"蔬果小學堂", link:"vegeinfo.html", isSelected:false},
-		farmerTalk : {name:"農民都說讚", link:"farmerTalk.html", isSelected:false},
-		friendShop : {name:"合作商家", link:"friendShop.html", isSelected:false},
+		vegeinfo : {name:"蔬果小學堂", link:"vegeinfo.html", isSelected:false, isShown:false},
+		farmerTalk : {name:"農民都說讚", link:"farmerTalk.html", isSelected:false, isShown:false},
+		friendShop : {name:"合作商家", link:"friendShop.html", isSelected:false, isShown:false},
+		activity : {name:"活動專欄", link:"activity.html", isSelected:false, isShown:true}
 	};
 
 	$rootScope.StyleTargetMenu = function(objMenu){
