@@ -32,7 +32,7 @@
 			<div id="showText">&rsaquo;&rsaquo;看看為您精心準備的蔬菜</div>
 			<div id="banner"></div>
 		</div>
-		<div class="blackBG" ng-if="isShowVideo"></div>
+		<div class="blackBG" ng-if="isShowVideo||objOrder.isShow||objShoppingInfo.isShow"></div>
 		<div class="videoPage" ng-show="isShowVideo">
 			<a href="javascript:;" ng-click="fnChangeShowVideo()" title="關閉影片"><span class="icon close"></span></a>
 			<div style='width: 800px;height: 450px;margin: auto;'>
@@ -55,25 +55,38 @@
 				<p>古坑沈媽媽的茂谷蜜柑，<span class="redFront">產地直送沈媽媽的栽種方式堅持不用除草劑</span>，一個月需人工割草一次，並保留草皮當做保濕用，使茂谷蜜柑不容易自行掉落下來。較費工夫，這也是沈媽媽的茂谷蜜柑相較好吃的原因！<br>今年產量大減，約去年的四成，今年茂谷柑價格也較往年高，<span class="redFront">出貨持續到元宵前，賣完就沒了~</span><br><br>按訂單順序出貨，<u>下單付款後當天採收寄送(下午三點前下單付款，當天出貨，正常情況下隔天送達)</u></p>
 			</div>
 			<div id="nextDelivery">
-				<span>現在下單，預計{{fnGetNextDeliveryDate(nOrangeDeliveryDay)}}產地直送</span>
+				<span>現在下單，預計{{fnGetNextDeliveryDate(objOrange.nOrangeDeliveryDay)}}產地直送</span>
 				<span class="icon delivery"></span>
 			</div>
 			<ul class="optionDiv">
-				<li ng-repeat="(key,value) in objOrangeOption">
+				<li ng-repeat="(key,value) in objOrange.options">
 					<div id="title">{{value.title}}</div>
 					<img src="./images/shopping/orange/{{value.photo}}" />
 					<br>
 					<p>{{value.detail}}</p>
 					<p id="price">{{value.price | currency:"$":0}}</p>
-					<select id="count" ng-model="value.count" ng-options="i for i in [0,1,2,3,4,5,6,7,8,9,10]" ng-change="fnCountOrange()">
+					<select id="count" ng-model="value.count" ng-options="i for i in [0,1,2,3,4,5,6,7,8,9,10]" ng-change="objOrange.fnCountOrange()">
 					</select>
 				</li>
 			</ul>
-			<div class="submit" ng-if="isSelected">
-				<p>您選購好了嗎，趕緊填寫訂單吧！</p><br>
-				<a href="javascript:;">填寫訂單</a>
+			<div class="submit" ng-if="objOrange.isSelected">
+				<p>您選購好了嗎，趕緊填寫訂單吧！</p>
+				<p>目前金額：{{objOrange.nTotalPrice | currency:"$":0}}</p>
+				<br>
+				<a href="javascript:;" ng-click="objOrder.fnCreateOrder()">填寫訂單</a>
 			</div>
 		</section>
+		<div class="orderDiv limitWebView" ng-if="objOrder.isShow">
+			<a href="javascript:;" ng-click="objOrder.fnCloseOrder()" title="關閉訂單"><span class="icon close"></span></a>
+			<div class="leftNotice">
+				您的個人資料　　蔬果溜溜絕死保密
+			</div>
+			<h2>建立訂單</h2>
+			<div class="orderColumn" ng-repeat="(key,obj) in objOrder.columns">
+				<span>{{obj.title}}</span>
+				<input type="text" ng-model="obj.value">
+			</div>
+		</div>
 	</div>
 	<!-- end index -->
 
