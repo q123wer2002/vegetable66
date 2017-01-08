@@ -107,36 +107,84 @@ section{
 		float: right;
 		margin:200px 15% 0px 0px;
 	}
-#detail{
-	width: 90%;
-	margin: auto;
-}
-.redSadow{
-	text-shadow: 2px 2px #C00000;
-	font-weight: 900;
-}
-.redFront{
-	color:#C00000;
-	font-weight: 900;
-}
-.optionDiv{
-	list-style: none;
-	width: 90%;
-	margin: 30px auto 0 auto;
-}
-.optionDiv a{color:#000;}
-.optionDiv li{
-	width: 25%;
-	margin: 0 1.5%;
-	padding: 20px 2.5%;
-	display: inline-block;
-	text-align: center;
-	border:1px solid #FC7D26;
-}
-.optionDiv img{
-	max-width: 100%;
-	max-height: 210px;
-}
-.optionDiv a:hover li{
-	background: #FF9851;
-}
+/* body */
+	#detail{
+		width: 100%;
+		margin: auto;
+	}
+	#detail .intro{
+		width: 78%;
+		padding: 10px 10% 25px 10%;
+	}
+	#detail #nextDelivery{
+		width: 100%;
+		height: 50px;
+		background : #FF7F27;
+		line-height: 50px;
+		font-size: 20px;
+		color:#fff;
+		text-align: center;
+	}
+	#detail #nextDelivery .delivery{
+		width: 30px;
+		height: 30px;
+		background: url(./../images/icon/black_delivery.png);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+	.redSadow{
+		text-shadow: 2px 2px #C00000;
+		font-weight: 900;
+	}
+	.redFront{
+		color:#C00000;
+		font-weight: 900;
+	}
+	.optionDiv{
+		list-style: none;
+		margin: 30px auto 30px auto;
+	}
+	.optionDiv #title{
+		width: 50%;
+		margin: 0px auto 10px auto;
+		font-size: 20px;
+		font-weight: 800;
+		border-bottom: 2px solid #FC7D26;
+	}
+	.optionDiv li{
+		width: 25%;
+		margin: 0 1.5%;
+		padding: 20px 2.5%;
+		display: inline-block;
+		text-align: center;
+		border:1px solid #FC7D26;
+	}
+	.optionDiv img{
+		max-width: 100%;
+		height: 210px;
+		margin: 10px 0px;
+	}
+	.optionDiv #price{
+		font-size: 30px;
+		color: #D66110;
+		margin: 10px 0px;
+	}
+	.optionDiv #count{
+		width: 100%;
+		height: 30px;
+		font-size: 15px;
+		font-weight: 600;
+		border-color:#D66110;
+	}
+	.submit{
+		width: 100%;
+		text-align: center;
+	}
+	.submit a{
+		background:#FF7F27;
+		padding:10px 15px;
+		border-radius: 3px;
+		font-weight: 400;
+		font-size: 17px;
+		color: #fff;
+	}
