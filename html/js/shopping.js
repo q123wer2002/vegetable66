@@ -60,49 +60,63 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 
 				if( $scope.objOrange.nTotalPrice == 0 ){
 					$scope.objOrange.isSelected = false;
+
+					//
+					$scope.objOrder.isShow = false;
 					return;
 				}
 
 				$scope.objOrange.isSelected = true;
 			},
 		};
-	//order
-		$scope.objShoppingInfo = {
+	//shopping info
+		$scope.objShopInfo = {
 			isShow : false,
+			isAgree : false,
 
+			fnClickCheckBox : function(){
+				$scope.objShopInfo.isAgree = !$scope.objShopInfo.isAgree;
+			},
 		};
+	//order
 		$scope.objOrder = {
-			
 			isShow : true,
-
+			szError : "",
 			columns : {
 				name : {
 					title : "姓名",
 					value : "",
+					isNecessary : true,
 				},
 				phone : {
 					title : "手機",
 					value : "",
+					isNecessary : true,
 				},
 				email : {
 					title : "電子郵件",
 					value : "",
+					isNecessary : true,
 				},
 				address : {
 					title : "宅配地址",
 					value : "",
+					isNecessary : true,
 				},
 				received_option : {
 					title : "宅配選項",
 					value : "",
+					isNecessary : true,
 				},
 				ATM : {
 					title : "ATM匯款後五碼",
 					value : "",
+					isNecessary : true,
 				},
 				comment : {
 					title : "寶貴建議",
 					value : "",
+					isNecessary : false,
 				},
 			},
 
@@ -112,6 +126,33 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 
 			fnCloseOrder : function(){
 				$scope.objOrder.isShow = false;	
-			}
+			},
+
+			m_isOrderRequiredDone : function(){
+				//check column
+				for( var key in $scope.objOrder.columns ){
+					if( $scope.objOrder.columns[key].isNecessary == true && $scope.objOrder.columns[key].value.length == 0 ){
+						$scope.objOrder.szError = "\"" + $scope.objOrder.columns[key].title + "\"欄位不可以空白";
+						return false;
+					}
+				}
+
+				//check shopping info
+				if( $scope.objShopInfo.isAgree == false ){
+					$scope.objOrder.szError = "別忘了查看購買須知唷";
+					return false;
+				}
+
+				return true;
+			},
+
+			fnSubmit : function(){
+				if( $scope.objOrder.m_isOrderRequiredDone() == false ){
+					return;
+				}
+
+				//clear error message
+				$scope.objOrder.szError = "";
+			},
 		};
 });

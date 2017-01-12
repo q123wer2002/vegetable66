@@ -183,7 +183,7 @@ section{
 	.submit a{
 		background:#FF7F27;
 		padding:10px 15px;
-		border-radius: 3px;
+		border-radius: 2px;
 		font-weight: 400;
 		font-size: 17px;
 		color: #fff;
@@ -193,23 +193,28 @@ section{
 	}
 /* order */
 	.orderDiv{
-		width: 75%;
-		height: 75%;
 		background: #fff;
-		position: fixed;
-		padding: 25px;
-		top: 10%;
-		left: 10%;
-		z-index: 10;
 		text-align: center;
+		margin: 50px auto;
+		padding: 30px 0px;
+		border-top: 1px solid rgba(0,0,0,0.1);
+		border-bottom: : 1px solid rgba(0,0,0,0.1);
 	}
 	.orderDiv .orderColumn{
 		width: 450px;
 		height: 35px;
 		margin: 15px auto 0px auto;
 		line-height: 35px;
+		color: #FD6F75;
+		position: relative;
 	}
-	.orderDiv .orderColumn span{
+	.orderDiv .orderColumn .tagNecessary{
+		position: absolute;
+		top: 0px;
+		right: -35px;
+		font-size: 9px;
+	}
+	.orderDiv .orderColumn .title{
 		float: left;
 		width: 120px;
 		text-align: right;
@@ -221,21 +226,51 @@ section{
 		float: right;
 		width: 300px;
 		height: 35px;
-		font-size: 20px;
+		font-size: 18px;
 		padding-left: 15px;
+		border : 1px solid #FD969A;
+		border-radius: 2px;
+		font-family: "微軟正黑體";
 	}
-	.leftNotice{
+	.orderDiv .orderColumn .enteredInput{
+		outline: none;
+		border-color : rgba(0,0,0,0.3);
+		box-shadow : none;
+	}
+	.orderDiv .orderColumn .enteredTitle{
+		color: #888888;
+	}
+	.orderDiv .leftNotice{
 		position: absolute;
+		top: 30px;
 		background: #C00000;
-		left: 0;
-		top: 0;
-		width: 80px;
-		height: 100%;
+		width: 50px;
+		min-height: 400px;
+		height: 80%;
 		color: #fff;
 		font-weight: 500;
-		font-size: 25px;
+		font-size: 20px;
 		text-align: center;
-		line-height: 80px;
+		line-height: 50px;
+		border-radius: 3px;
 		-webkit-writing-mode: vertical-lr;
 		writing-mode: vertical-lr;
+	}
+	.orderDiv .buyNote{
+		margin: 50px auto 10px auto;
+		font-size: 12px;
+	}
+	.orderDiv .submitDiv{
+		font-size: 15px;
+	}
+	.orderDiv .submitDiv a{
+		background:#C00000;
+		padding:10px 15px;
+		border-radius: 1px;
+		font-weight: 400;
+		font-size: 17px;
+		color: #fff;
+	}
+	.orderDiv .submitDiv a:hover{
+		background: #D73B3B;
 	}

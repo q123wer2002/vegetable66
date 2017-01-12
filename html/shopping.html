@@ -32,7 +32,7 @@
 			<div id="showText">&rsaquo;&rsaquo;看看為您精心準備的蔬菜</div>
 			<div id="banner"></div>
 		</div>
-		<div class="blackBG" ng-if="isShowVideo||objOrder.isShow||objShoppingInfo.isShow"></div>
+		<div class="blackBG" ng-if="isShowVideo||objShopInfo.isShow"></div>
 		<div class="videoPage" ng-show="isShowVideo">
 			<a href="javascript:;" ng-click="fnChangeShowVideo()" title="關閉影片"><span class="icon close"></span></a>
 			<div style='width: 800px;height: 450px;margin: auto;'>
@@ -45,6 +45,9 @@
 
 				<script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
 			</div>
+		</div>
+		<div class="videoPage" ng-show="objShopInfo.isShow">
+			<h2>蔬果溜溜購買須知</h2>
 		</div>
 		<section class="banner">
 			<p><span class="redSadow">歲末年前主打<br>茂谷蜜柑</span></p>
@@ -71,22 +74,34 @@
 			</ul>
 			<div class="submit" ng-if="objOrange.isSelected">
 				<p>您選購好了嗎，趕緊填寫訂單吧！</p>
-				<p>目前金額：{{objOrange.nTotalPrice | currency:"$":0}}</p>
+				<p>目前金額：<u>{{objOrange.nTotalPrice | currency:"$":0}}</u></p>
 				<br>
-				<a href="javascript:;" ng-click="objOrder.fnCreateOrder()">填寫訂單</a>
+				<a href="javascript:;" ng-click="objOrder.fnCreateOrder()">下一步</a>
 			</div>
 		</section>
-		<div class="orderDiv limitWebView" ng-if="objOrder.isShow">
-			<a href="javascript:;" ng-click="objOrder.fnCloseOrder()" title="關閉訂單"><span class="icon close"></span></a>
+		<section class="orderDiv limitWebView" ng-if="objOrder.isShow">
 			<div class="leftNotice">
-				您的個人資料　　蔬果溜溜絕死保密
+				您的個人資料　　蔬果溜溜絕對保密
 			</div>
-			<h2>建立訂單</h2>
-			<div class="orderColumn" ng-repeat="(key,obj) in objOrder.columns">
-				<span>{{obj.title}}</span>
-				<input type="text" ng-model="obj.value">
+			<div class="rightDiv">
+				<h2>建立訂單</h2>
+				<div class="orderColumn" ng-repeat="(key,obj) in objOrder.columns">
+					<span class="title" ng-class="{enteredTitle:obj.value}">{{obj.title}}</span>
+					<input type="text" ng-model="obj.value" ng-class="{enteredInput:obj.value}">
+					<span class="tagNecessary" ng-if="obj.isNecessary">*必填</span>
+				</div>
 			</div>
-		</div>
+			<div class="buyNote" ng-click="objShopInfo.fnClickCheckBox()">
+				<input type="checkbox" ng-model="objShopInfo.isAgree" ng-click="objShopInfo.fnClickCheckBox()"/>
+				<span>同意蔬果溜溜的購買須知《<a href="javascript:;">詳細須知</a>》</span>
+			</div>
+			<div class="submitDiv">
+				<hint>訂單也會寄送到您填寫的Email中喔！</hint>
+				<hint ng-if="objOrder.szError.length" style="color:red;margin:30px;border-bottom: 1px solid red;"><br><br>{{objOrder.szError}}<br></hint>
+				<br><br>
+				<a href="javascript:;" ng-click="objOrder.fnSubmit()">確定並查看訂單</a>
+			</div>
+		</section>
 	</div>
 	<!-- end index -->
 
