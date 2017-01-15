@@ -91,7 +91,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 			},
 
 			fnIsShowShopInfo : function(){
-				$scope.objShopInfo.isShow = !$scope.objShopInfo.isShow;	
+				$scope.objShopInfo.isShow = !$scope.objShopInfo.isShow;
+				jQuery(".shopinfoPage").css('display','block');
 			},
 		};
 	//order

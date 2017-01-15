@@ -27,6 +27,6 @@ app.get('/', function(req,res){
 
 
 //listening port
-app.listen(5566,function(){
-	console.log("Web is listening in port 5566");
+app.listen(80,function(){
+	console.log("Web is listening in port 80");
 });
