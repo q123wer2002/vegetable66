@@ -222,7 +222,7 @@ section{
 		padding-right: 15px;
 		border-right: 2px solid #888;
 	}
-	.orderDiv .orderColumn input{
+	.orderDiv .orderColumn input,select{
 		float: right;
 		width: 300px;
 		height: 35px;
@@ -273,4 +273,58 @@ section{
 	}
 	.orderDiv .submitDiv a:hover{
 		background: #D73B3B;
+	}
+.shopinfoPage{
+	position: fixed;
+	width: 75%;
+	background: #fff;
+	z-index: 10;		
+	left: 10%;
+	top: 50px;
+	padding: 15px 2.5%;
+	border-radius: 2px;
+}
+	/*last comfirm page*/
+	.lastConfirmPage{
+		position: fixed;
+		width: 75%;
+		background: #fff;
+		box-shadow: 0px 0px 5px #888;
+		z-index: 10;
+		left: 10%;
+		top: 50px;
+		padding: 15px 2.5%;
+		border-radius: 2px;
+		text-align: center;
+		max-height: 80%;
+		overflow: auto;
+	}
+	.lastConfirmPage table{
+		width: 90%;
+		text-align: center;
+		margin: 15px auto;
+	}
+	.lastConfirmPage table,tr,td{
+		border-collapse: collapse;
+		border: 1px solid rgba(0,0,0,0.1);
+	}
+	.lastConfirmPage .userDiv{
+		float:left;
+		text-align: left;
+	}
+	.lastConfirmPage .comfirmDiv{
+	}
+	.lastConfirmPage .comfirmDiv a{
+		padding: 10px 15px;
+		color: #fff;
+		margin: 20px 10px;
+	}
+	.lastConfirmPage .comfirmDiv a:hover{
+		color: black;
+	}
+	.lastConfirmPage .comfirmDiv #btnBack2Edit{
+		background: #FDCC55;
+	}
+	.lastConfirmPage .comfirmDiv #btnFinishOrder{
+		background: #0CC743;
 	}

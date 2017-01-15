@@ -1,7 +1,7 @@
 var vegefruit66 = angular.module('vegefruit66', []);
 
 //controller
-vegefruit66.controller('mainController', function($scope, $rootScope){
+vegefruit66.controller('mainController', function($scope, $rootScope,$http){
 	//header
 		$rootScope.header = {
 			title : "蔬果溜溜",

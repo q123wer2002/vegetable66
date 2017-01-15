@@ -1,5 +1,5 @@
 //
-vegefruit66.controller('shoppingController', function($scope,$rootScope){
+vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 	$rootScope.currentLink = "shopping.html";
 
 	$scope.fnGetNextDeliveryDate = function(nDayOfWeek){
@@ -10,6 +10,16 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 		dateToday.setDate(dateToday.getDate() + (nDayOfWeek-1-dateToday.getDay()+7)%7+1);
 
 		return (dateToday.getMonth()+1) + "/" + dateToday.getDate();
+	}
+
+	$scope.fnBKshadowClose = function(){
+		if( $scope.isShowVideo == true ){
+			$scope.fnChangeShowVideo();
+		}
+
+		if( $scope.objShopInfo.isShow == true ){
+			$scope.objShopInfo.fnIsShowShopInfo();
+		}
 	}
 
 	//video
@@ -74,49 +84,111 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 			isShow : false,
 			isAgree : false,
 
+			detail : "",
+
 			fnClickCheckBox : function(){
 				$scope.objShopInfo.isAgree = !$scope.objShopInfo.isAgree;
+			},
+
+			fnIsShowShopInfo : function(){
+				$scope.objShopInfo.isShow = !$scope.objShopInfo.isShow;	
 			},
 		};
 	//order
 		$scope.objOrder = {
-			isShow : true,
+			isShow : false,
 			szError : "",
 			columns : {
 				name : {
 					title : "姓名",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						if( $scope.objOrder.columns.name.value.length == 0 ){
+							return false;
+						}
+						return true;
+					},
 				},
 				phone : {
 					title : "手機",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						var szPhone = $scope.objOrder.columns.phone.value;
+						if( szPhone.length < 10 || szPhone.length > 13){
+							return false;
+						}
+
+						var strTemp="0123456789-()#+";
+						for( var i=0; i<szPhone.length; i++ ){
+							if( strTemp.indexOf(szPhone[i]) == -1 ){
+								return false;
+							}
+						}
+
+						return true;
+					},
 				},
 				email : {
 					title : "電子郵件",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						var szEmail = $scope.objOrder.columns.email.value;
+						var szEmailRule = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]+$/;
+						
+						if( szEmail.search(szEmailRule) == -1 ){
+							return false;
+						}
+
+						return true;
+					},
 				},
 				address : {
 					title : "宅配地址",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						return true;
+					},
 				},
-				received_option : {
+				option_delivery : {
 					title : "宅配選項",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						return true;
+					},
 				},
 				ATM : {
 					title : "ATM匯款後五碼",
 					value : "",
 					isNecessary : true,
+					fnIsValid : function(){
+						var szATMfive = $scope.objOrder.columns.ATM.value;
+
+						if( szATMfive.length != 5 ){
+							return false;
+						}
+
+						var szStrTemp = "0123456789";
+						for( i=0; i<szATMfive.length; i++ ){
+							if( szStrTemp.indexOf(szATMfive[i]) == -1 ){
+								return false;
+							}
+						}
+
+						return true;
+					},
 				},
 				comment : {
 					title : "寶貴建議",
 					value : "",
 					isNecessary : false,
+					fnIsValid : function(){
+						return true;
+					},
 				},
 			},
 
@@ -135,6 +207,11 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 						$scope.objOrder.szError = "\"" + $scope.objOrder.columns[key].title + "\"欄位不可以空白";
 						return false;
 					}
+
+					if( $scope.objOrder.columns[key].fnIsValid() == false ){
+						$scope.objOrder.szError = "\"" + $scope.objOrder.columns[key].title + "\"欄位格式錯誤";
+						return false;
+					}
 				}
 
 				//check shopping info
@@ -146,6 +223,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 				return true;
 			},
 
+			isFinish : false,
 			fnSubmit : function(){
 				if( $scope.objOrder.m_isOrderRequiredDone() == false ){
 					return;
@@ -153,6 +231,61 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope){
 
 				//clear error message
 				$scope.objOrder.szError = "";
+
+				//create data into file
+				$scope.objMyOrder = {
+					nTotalPrice : 0,
+					aryProduct : [],
+					objAddress : {},
+				};
+
+				$scope.objOrder.isFinish = true;
+				
+				//product
+				for( var option in $scope.objOrange.options ){
+					if( $scope.objOrange.options[option].count != 0 ){
+						var orderTmp = {
+							name : $scope.objOrange.options[option].title,
+							price : $scope.objOrange.options[option].price,
+							photo : $scope.objOrange.options[option].photo,
+							count : $scope.objOrange.options[option].count,
+						};
+						$scope.objMyOrder.aryProduct.push(orderTmp);
+					}
+				}
+
+				//total price
+				$scope.objMyOrder.nTotalPrice = $scope.objOrange.nTotalPrice;
+
+				//address
+				for( var key in $scope.objOrder.columns ){
+					$scope.objMyOrder.objAddress[key] = {
+						title : $scope.objOrder.columns[key].title,
+						value : $scope.objOrder.columns[key].value,
+					};
+				}
 			},
 		};
+
+	$scope.isDone = false;
+	$scope.nWaitSecond = 5;
+	$scope.fnOrderDone = function(){
+		//console.log($http.post('http://localhost:5566/vegefruit_api/order').then(function(response){console.log(response);}));
+		//send data into databse
+		$http.post('./vegefruit_api/order', JSON.stringify($scope.objMyOrder) )
+		.then(function(data){
+			
+			console.log(data);
+			$scope.isDone = true;
+			
+			setInterval(function(){
+				$scope.nWaitSecond--;
+
+				if( $scope.nWaitSecond == 0 ){
+					window.open("http://vegefruit66.tk", "_self");
+				}
+			},1000);
+
+		});
+	}
 });
