@@ -30,33 +30,33 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 		}
 	//orange
 		$scope.objOrange = {
-			nOrangeDeliveryDay : 3, //Wednesday
+			nOrangeDeliveryDay : 5, //Wednesday
 
 			isSelected : false,
 			nTotalPrice : 0,
 			
 			options : {
-				ForUs : {
-					title : "蜜柑饗宴",
-					price : 599,
-					detail : "茂谷蜜柑(有機栽種)，25A/27A混裝，一箱10士5%台斤(25~27顆)。註:外觀較差，保值期較短，但較甜，數量有限。",
+				ForTesting : {
+					title : "活力水果嘗鮮箱",
+					price : 399,
+					detail : "內含茂谷蜜柑、珍珠芭樂、玉女小番茄、牛番茄...等當季新鮮水果(3~5種)，一箱4士5%台斤。",
 					photo : "option1.jpg",
 					count : 0,
 				},
-				ForPresent : {
-					title : "拌手禮",
-					price : 799,
-					detail : "茂谷蜜柑25A/27A混裝，一箱10士5%台斤(25~27顆)。塑膠套封裝可存放一、兩個月，但建議盡早食用，風味較佳。",
+				ForFamily : {
+					title : "活力水果家庭箱",
+					price : 699,
+					detail : "內含茂谷蜜柑、珍珠芭樂、玉女小番茄、牛番茄...等當季新鮮水果(3~5種)，一箱10士5%台斤。",
 					photo : "option2.jpg",
 					count : 0,
 				},
-				ForEmpire : {
+				/*ForEmpire : {
 					title : "尊榮不凡",
 					price : 1099,
 					detail : "茂谷蜜柑30A頂級禮盒裝，一箱9士5%台斤(約18顆)。塑膠套封裝可存放一、兩個月，但建議盡早食用，風味較佳。",
 					photo : "option3.jpg",
 					count : 0,
-				},
+				},*/
 			},
 
 			fnCountOrange : function(){
@@ -273,6 +273,9 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 	$scope.fnOrderDone = function(){
 		//console.log($http.post('http://localhost:5566/vegefruit_api/order').then(function(response){console.log(response);}));
 		//send data into databse
+
+		//add order date
+		$scope.objMyOrder['create_date'] = new Date().toLocaleString();
 		$http.post('./vegefruit_api/order', JSON.stringify($scope.objMyOrder) )
 		.then(function(data){
 			
