@@ -27,7 +27,7 @@ hr{width: 50%;border-color: rgba(255,255,255,0.3);}
 	#buyNow:hover{background-color: #DA5050;}
 .body{position: relative;width: 1024px;margin: auto;height: auto;margin-top: 15px;margin-bottom: 50px;}
 .footer{width: 100%;height: auto;position: relative;background: #888888;bottom: 0px;min-height: 400px;text-align: center;color: #ccc;}
-	.footer .socialLinks {margin: 0 auto 42px auto;padding-top: 30px;text-align: center;}
+	.footer .socialLinks {margin: 0 auto 30px auto;padding-top: 30px;text-align: center;}
 	.footer .socialLinks li {display: inline-block;margin: 0;padding: 0;margin-left: 32px;}
 	.footer .socialLinks li a {color: rgba(255, 255, 255, 0.3);font-size: 38px;}
 	.footer .socialLinks li a:hover {color: white;}

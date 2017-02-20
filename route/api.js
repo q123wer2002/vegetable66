@@ -49,6 +49,9 @@ var m_fnCreateMailContent = function(szCode,objOrder){
 	userinfoHtml = userinfoHtml + "</table>";
 	option.content += userinfoHtml;
 
+	//add vegetable url
+	option.content += "<br><br><a href='http://vegefruit66.tk' target='_new' >蔬果溜溜官網查看更多蔬果資訊</a>"
+
 	//return
 	return option;
 }
@@ -74,7 +77,8 @@ app.route('/order')
 				if (err) return console.log(err);
 
 				var option = m_fnCreateMailContent(szUniCode,order);
-				EmailManager.fnSendMail(option);
+				EmailManager.fnSendMail(option, function(err,info){});
+
 				res.send(szUniCode);
 			}); // write it back 
 		});
