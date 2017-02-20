@@ -47,7 +47,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 					title : "活力水果家庭箱",
 					price : 699,
 					detail : "內含茂谷蜜柑、珍珠芭樂、玉女小番茄、牛番茄...等當季新鮮水果(3~5種)，一箱10士5%台斤。",
-					photo : "option2.jpg",
+					photo : "option1.jpg",
 					count : 0,
 				},
 				/*ForEmpire : {
