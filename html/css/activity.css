@@ -1590,10 +1590,13 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "微軟正黑體", "Lato", Arial, Helvetica, sans-serif;
+		font-family: "Lato", Arial, Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75;
+	}
+	p, a, h1 {
+		font-family: "微軟正黑體"
 	}
 
 		@media screen and (max-width: 1680px) {
