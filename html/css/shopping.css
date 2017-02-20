@@ -21,7 +21,7 @@ section{
 	}
 	.vegetableBanner #banner{
 		width: 100%;
-		height: 100%;
+		height: 300px;
 		background: url('./../images/shopping/vegetableBanner.jpg');
 		background-size: 100% auto;
 		background-repeat: no-repeat;
