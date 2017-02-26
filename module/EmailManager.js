@@ -10,33 +10,35 @@ var mailTransporter = EmailModule.createTransport("SMTP",{
     auth: {
         user: 'healthyvegetable1612@gmail.com',
         pass: 'vegetable1277'
-    }
+    },
 });
 
-var objOptions = {
-	from : "蔬果溜溜<healthyvegetable1612@gmail.com>", //sender
-	to : "", //receiver
-	cc : "", //cc
-	bcc : "", //secert cc
-	subject : "",
-	text : "", //plaintext body
-	html : "此信件由系統發出<hr><br>",
-	attachments : [],
-	/*
-	{filename : "",content:""}
-	{filename : "",path:""}
-	*/
-};
 //end setting
 var mailModule = {};
 mailModule.fnSendMail = function(options,fnCallback){
+	//mail default
+	var objOptions = {
+		from : "蔬果溜溜<healthyvegetable1612@gmail.com>", //sender
+		to : "", //receiver
+		cc : "", //cc
+		bcc : "", //secert cc
+		subject : "",
+		text : "", //plaintext body
+		html : "此信件由系統發出<hr><br>",
+		attachments : [],
+		/*
+		{filename : "",content:""}
+		{filename : "",path:""}
+		*/
+	};
+
 	objOptions.to = options.receiver;
 	objOptions.subject = options.topic;
 	objOptions.html += options.content;
 
 	mailTransporter.sendMail(objOptions,function(err,info){
 		 if(err){
-		 	return fnCallback( "error" + err);
+		 	return fnCallback(true,err);
 		 }
 
 		 fnCallback(false,info);

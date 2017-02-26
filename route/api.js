@@ -20,12 +20,13 @@ var m_fnCreateMailContent = function(szCode,objOrder){
 	//for title
 	option.content = option.content + "親愛的" + objOrder.objAddress.name.value + "您好，感謝您訂購蔬果溜溜<br>";
 	option.content = option.content + "總金額為： <span style=\"color:red\">$" + objOrder.nTotalPrice + "</span><br>";
+	option.content = option.content + "<br><hr><br> 匯款資料：中華郵政 <br>郵局代號：700 <br> 帳號：0301151-0466691 <br> 戶名：曾國舜 <br><hr><br>";
 	option.content = option.content + "您的訂單編號為：" + szCode + "<br>您訂購資訊如下：";
 
 	//for css
 	var szTableCss = "<style>";
-	szTableCss = szTableCss + "table{width: 90%;text-align: center;margin: 15px auto;}";
-	szTableCss = szTableCss + "table,tr,td{border: 1px solid rgba(0,0,0,0.1);}";
+	szTableCss = szTableCss + "table{width: 100%;text-align: center;margin: 15px auto;border-collapse: collapse;}";
+	szTableCss = szTableCss + "table,tr,td{border: 1px solid rgba(0,0,0,0.1);padding:5px 7px;}";
 	szTableCss = szTableCss + "</style>";
 	option.content += szTableCss;
 
@@ -77,20 +78,31 @@ app.route('/order')
 				if (err) return console.log(err);
 
 				var option = m_fnCreateMailContent(szUniCode,order);
-				EmailManager.fnSendMail(option, function(err,info){});
+				EmailManager.fnSendMail(option, function(err,info){
+					if(err){
+						console.log(info);
+					}
+				});
 
 				res.send(szUniCode);
+				res.end();
 			}); // write it back 
 		});
 		
 	});
-app.route('/mail')
+app.route('/test_send_mail')
 	.get(function(req,res,next){
-		EmailManager.fnSendMail(function(err,info){
+		var objOptions = {
+			receiver : "q123wer2002@gmail.com",
+			topic : "TEST",
+			content : "HELLO, TEST",
+		};
+		EmailManager.fnSendMail(objOptions,function(err,info){
 			if(err){
-				res.send(err);
+				info.result = "Fail";
+				res.send(info);
 			}
-
+			info.result = "Success";
 			res.send(info);
 		});
 	});
