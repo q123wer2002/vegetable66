@@ -1590,13 +1590,13 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Lato", Arial, Helvetica, sans-serif;
+		font-family: "微軟正黑體";
 		font-size: 16pt;
 		font-weight: 300;
 		line-height: 1.75;
 	}
 	p, a, h1 {
-		font-family: "微軟正黑體"
+		font-family: "微軟正黑體";
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -1618,10 +1618,6 @@
 	a {
 		text-decoration: none;
 	}
-
-		a:hover {
-			text-decoration: underline;
-		}
 
 	strong, b {
 		font-weight: 700;
@@ -1691,7 +1687,7 @@
 	code {
 		border-radius: 0;
 		border: solid 1px;
-		font-family: "Courier New", monospace;
+		font-family: "微軟正黑體";
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -1699,7 +1695,7 @@
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: "微軟正黑體";
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -1735,10 +1731,6 @@
 
 	input, select, textarea {
 		color: #555;
-	}
-
-	a {
-		color: #1abc9c;
 	}
 
 	strong, b {
@@ -2027,7 +2019,7 @@
 		.select-wrapper:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: "微軟正黑體";
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2091,7 +2083,7 @@
 			input[type="radio"] + label:before {
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: "微軟正黑體";
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -2227,7 +2219,7 @@
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: "微軟正黑體";
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -2330,13 +2322,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2em 0;
-		padding-left: 1em;
 	}
-
-		ul li {
-			padding-left: 0.5em;
-		}
 
 		ul.alt {
 			list-style: none;
@@ -3118,7 +3104,7 @@
 					content: "";
 					-moz-osx-font-smoothing: grayscale;
 					-webkit-font-smoothing: antialiased;
-					font-family: FontAwesome;
+					font-family: "微軟正黑體";
 					font-style: normal;
 					font-weight: normal;
 					text-transform: none !important;
@@ -3265,7 +3251,7 @@
 				content: "";
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: "微軟正黑體";
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -3308,11 +3294,12 @@
 /* Banner */
 
 	#banner {
+		margin-top: 15px;
 		background-color: #3498db;
 		color: rgba(255, 255, 255, 0.75);
 		text-align: center;
 		cursor: default;
-		padding: 10em 4em 9em 4em;
+		padding:100px;
 	}
 
 		#banner input, #banner select, #banner textarea {
