@@ -9,8 +9,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 		//this week would delivery
 		dateToday.setDate(dateToday.getDate() + (nDayOfWeek-1-dateToday.getDay()+7)%7+1);
 
-		//return (dateToday.getMonth()+1) + "/" + dateToday.getDate();
-		return "3/4";
+		return (dateToday.getMonth()+1) + "/" + dateToday.getDate();
 	}
 
 	$scope.fnBKshadowClose = function(){

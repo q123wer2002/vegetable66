@@ -135,9 +135,9 @@
 			</table>
 
 			<div class="userDiv">
-				<div class="orderColumn" ng-repeat="(key,obj) in objMyOrder.objAddress" style="position: relative;margin:15px">
-					<span style="position: absolute;left: -5px;top: -10px;font-size: 9px;font-weight: 800;">{{obj.title}}</span>
-					<span style="font-size: 20px;">{{obj.value}}</span>
+				<div class="orderColumn" ng-repeat="(key,obj) in objMyOrder.objAddress" style="position: relative;margin:15px;">
+					<span style="position: absolute;left: -10px;top: -14px;font-size: 9px;font-weight: 800;color: #000;">{{obj.title}}</span>
+					<span style="font-size: 18px;">{{obj.value}}</span>
 				</div>
 			</div>
 
@@ -145,6 +145,10 @@
 				<p>合計 <span style="font-size: 50px;color: #C00000">{{objMyOrder.nTotalPrice | currency:"$":0 }}</span></p><br><br>
 				<a href="javascript:;" id="btnBack2Edit" ng-click="objOrder.isFinish=false;">返回編輯訂單</a>
 				<a href="javascript:;" id="btnFinishOrder" ng-click="fnOrderDone()">完成訂單</a>
+				<br><br><br>
+				<hr>
+				<p style="color:#000;">完成訂單後，系統將會自動將訂單資訊與匯款帳戶計到您的信箱。</p>
+				<p style="color:#000;">待客服人員確認您完成匯款後，會盡快安排您的訂單出貨。</p>
 			</div>
 			</div>
 		</div>

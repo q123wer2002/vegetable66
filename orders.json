@@ -1,0 +1,45 @@
+{
+	"order_1488183188276211": {
+		"nTotalPrice": 399,
+		"aryProduct": [
+			{
+				"name": "活力水果嘗鮮箱",
+				"price": 399,
+				"photo": "option1.jpg",
+				"count": 1,
+				"$$hashKey": "object:64"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "nfgwoeilg"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0911111111"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "ejgnleri@regio.com"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "ewkjlgnf"
+			},
+			"option_delivery": {
+				"title": "宅配選項",
+				"value": "不指定"
+			},
+			"ATM": {
+				"title": "ATM匯款後五碼",
+				"value": "12345"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": "wefwef"
+			}
+		},
+		"create_date": "2017/2/27 下午4:13:08"
+	}
+}
