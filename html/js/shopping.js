@@ -3,13 +3,22 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 	$rootScope.currentLink = "shopping.html";
 
 	$scope.fnGetNextDeliveryDate = function(nDayOfWeek){
-		//0~6
-		var dateToday = new Date();
-
+		/*var dateToday = new Date();
 		//this week would delivery
 		dateToday.setDate(dateToday.getDate() + (nDayOfWeek-1-dateToday.getDay()+7)%7+1);
+		return (dateToday.getMonth()+1) + "/" + dateToday.getDate();*/
+		
+		//two weeks one delivery, start from 3/11, 3/25,...
+		//only SAT.
 
-		return (dateToday.getMonth()+1) + "/" + dateToday.getDate();
+		var dateTody = new Date();
+		var dateFirstDelivery = new Date("2017-03-11");
+
+		var timeDiff = Math.abs(dateTody.getTime() - dateFirstDelivery.getTime());
+		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+		dateFirstDelivery.setDate( dateFirstDelivery.getDate() + Math.ceil(diffDays/14)*14 );
+		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
 	}
 
 	$scope.fnBKshadowClose = function(){
@@ -39,15 +48,15 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				ForTesting : {
 					title : "活力水果嘗鮮箱",
 					price : 399,
-					detail : "內含番茄、茂谷蜜柑、西洋梨、棗子、蘋果、芭樂等當季新鮮水果(3~5種)，一箱4台斤±5%。(含運)",
+					detail : "內含番茄、茂谷蜜柑、葡萄、棗子、哈密瓜、奇異果、芭樂等當季新鮮水果(3~5種)，一箱5台斤±5%。(含運)",
 					photo : "option1.jpg",
 					count : 0,
 				},
 				ForFamily : {
 					title : "活力水果家庭箱",
 					price : 699,
-					detail : "內含番茄、茂谷蜜柑、西洋梨、棗子、蘋果、芭樂等當季新鮮水果(3~5種)，一箱10台斤±5%。(含運)",
-					photo : "option1.jpg",
+					detail : "內含番茄、茂谷蜜柑、葡萄、棗子、哈密瓜、奇異果、芭樂等當季新鮮水果(3~5種)，一箱10台斤±5%。(含運)",
+					photo : "option2.jpg",
 					count : 0,
 				},
 				/*ForEmpire : {

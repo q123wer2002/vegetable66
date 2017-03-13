@@ -1,0 +1,21 @@
+/* */
+
+.body{
+	width: 100%;
+	margin: 0;
+}
+section{
+	max-width: 1024px;
+}
+.banner{
+	width:100%;
+	min-height: 500px;
+	background: url("./../images/masterVegeFood/banner.jpg");
+	background-size: 100% auto;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.foodList{
+	margin: 0;
+	padding:0;
+}
