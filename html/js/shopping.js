@@ -18,7 +18,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
 		dateFirstDelivery.setDate( dateFirstDelivery.getDate() + Math.ceil(diffDays/14)*14 );
-		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
+		//return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
+		return "3/18";
 	}
 
 	$scope.fnBKshadowClose = function(){
@@ -48,14 +49,14 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				ForTesting : {
 					title : "活力水果嘗鮮箱",
 					price : 399,
-					detail : "內含番茄、茂谷蜜柑、葡萄、棗子、哈密瓜、奇異果、芭樂等當季新鮮水果(3~5種)，一箱5台斤±5%。(含運)",
+					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(番茄、葡萄、芭樂、李子、棗子、哈密瓜、蘋果、西洋梨、甜桃、茂谷蜜柑、甜桃、百香果)，一箱5台斤±5%。(含運)",
 					photo : "option1.jpg",
 					count : 0,
 				},
 				ForFamily : {
 					title : "活力水果家庭箱",
 					price : 699,
-					detail : "內含番茄、茂谷蜜柑、葡萄、棗子、哈密瓜、奇異果、芭樂等當季新鮮水果(3~5種)，一箱10台斤±5%。(含運)",
+					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(番茄、葡萄、芭樂、李子、棗子、哈密瓜、蘋果、西洋梨、甜桃、茂谷蜜柑、甜桃、百香果)，一箱10台斤±5%。(含運)",
 					photo : "option2.jpg",
 					count : 0,
 				},
