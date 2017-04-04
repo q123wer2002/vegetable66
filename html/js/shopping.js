@@ -1,5 +1,5 @@
 //
-vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
+vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$interval){
 	$rootScope.currentLink = "shopping.html";
 
 	$scope.fnGetNextDeliveryDate = function(nDayOfWeek){
@@ -20,6 +20,38 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 		dateFirstDelivery.setDate( dateFirstDelivery.getDate() + Math.ceil(diffDays/14)*14 );
 		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
 	}
+
+	//count Reciprocal time
+	$scope.fnCountReciprocalTime = function(){
+		var nNextDay = $scope.objOrange.nOrangeDeliveryDay;
+		var date_now = new Date();
+		var date_nextDelivery = new Date( date_now.getFullYear() + "/" + $scope.fnGetNextDeliveryDate(nNextDay) );
+
+		var  fnSecondsToTime = function(secs)
+		{
+			var hours = Math.floor(secs / (60 * 60));
+
+			var divisor_for_minutes = secs % (60 * 60);
+			var minutes = Math.floor(divisor_for_minutes / 60);
+
+			var divisor_for_seconds = divisor_for_minutes % 60;
+			var seconds = Math.ceil(divisor_for_seconds);
+
+			var obj = {
+				"h": hours,
+				"m": minutes,
+				"s": seconds
+			};
+			return obj;
+		}
+		var nTotalSeconds = Math.floor(((date_nextDelivery-date_now)/1000));
+		var objReciprocalTime = fnSecondsToTime(nTotalSeconds);
+		return objReciprocalTime;
+	}
+	//interval to count reciprocal time
+	$interval(function(){
+		$scope.nReciprocal = $scope.fnCountReciprocalTime();
+	},1000);
 
 	$scope.fnBKshadowClose = function(){
 		if( $scope.isShowVideo == true ){

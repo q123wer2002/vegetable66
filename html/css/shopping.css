@@ -108,6 +108,22 @@ section{
 		margin:200px 15% 0px 0px;
 	}
 /* body */
+	.ReciprocalTime{
+		width: 150px;
+		height: 150px;
+		position: fixed;
+		z-index: 11;
+		border-radius: 100px;
+		text-align: center;
+		padding: 25px;
+		color: #548235;
+	}
+	#clockicon{
+		background: url("../images/shopping/vegetable.png");
+		width: 70px;
+		height: 70px;
+		background-size: 70px auto;
+	}
 	#detail{
 		width: 100%;
 		margin: auto;

@@ -43,6 +43,13 @@
 			<div id="banner"></div>
 		</div>-->
 		<div class="blackBG" ng-if="isShowVideo||objShopInfo.isShow||objOrder.isFinish" ng-click="fnBKshadowClose()"></div>
+		<!-- For Reciprocal Time-->
+		<div class="ReciprocalTime" ng-if="nReciprocal">
+			<span class="icon" id="clockicon"></span>
+			<h2>出貨倒數</h2>
+			<span style="font-size: 25px;font-weight: 900;">{{nReciprocal['h'] + ":" + nReciprocal['m'] + ":" + nReciprocal['s']}}</span>
+		</div>
+
 		<!--<div class="videoPage" ng-show="isShowVideo">
 			<a href="javascript:;" ng-click="fnChangeShowVideo()" title="關閉影片"><span class="icon close"></span></a>
 			<div style='width: 800px;height: 450px;margin: auto;'>
