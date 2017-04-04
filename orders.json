@@ -135,5 +135,52 @@
 			}
 		},
 		"create_date": "2017/4/4 上午7:17:14"
+	},
+	"order_1491271571582813": {
+		"nTotalPrice": 729,
+		"aryProduct": [
+			{
+				"name": "活力水果家庭箱",
+				"price": 699,
+				"photo": "option2.jpg",
+				"count": 1,
+				"$$hashKey": "object:128"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "王淑貞"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0913577786"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "shujan6625@yahoo.com.tw"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "桃園市桃園區莊敬路二段179號3樓"
+			},
+			"option_receive_delivery": {
+				"title": "收貨時間",
+				"value": "不指定"
+			},
+			"option_pay": {
+				"title": "付款方式",
+				"value": "貨到付款"
+			},
+			"pay_info": {
+				"title": "提醒您",
+				"value": "貨到付款每箱需要加30元"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": ""
+			}
+		},
+		"create_date": "Tue Apr 04 2017 10:05:58 GMT+0800 (CST)"
 	}
 }
