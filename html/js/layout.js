@@ -37,7 +37,7 @@ vegefruit66.controller('mainController', function($scope, $rootScope,$http){
 			vegeinfo : {name:"蔬果小學堂", link:"vegeinfo.html", isSelected:false, isShown:false},
 			farmerTalk : {name:"農民都說讚", link:"farmerTalk.html", isSelected:false, isShown:false},
 			friendShop : {name:"合作商家", link:"friendShop.html", isSelected:false, isShown:false},
-			masterVegeFood : {name:"蔬果大廚在這", link:"masterVegeFood.html", isSelected:false, isShown:true},
+			masterVegeFood : {name:"蔬果大廚在這", link:"masterVegeFood.html", isSelected:false, isShown:false},
 			activity : {name:"活動專欄", link:"activity.html", isSelected:false, isShown:true}
 		};
 

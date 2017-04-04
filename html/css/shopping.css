@@ -132,6 +132,13 @@ section{
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 	}
+	#notice{
+		font-size: 20px;
+		text-align: center;
+		font-weight: 700;
+		margin-top: 15px;
+		text-decoration: underline;
+	}
 	.redSadow{
 		text-shadow: 2px 2px #C00000;
 		font-weight: 900;
@@ -147,17 +154,29 @@ section{
 	.optionDiv #title{
 		width: 50%;
 		margin: 0px auto 10px auto;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: 800;
-		border-bottom: 2px solid #FC7D26;
+		border-bottom: 2px solid #D66110;
 	}
 	.optionDiv li{
-		width: 40%;
-		margin: 0 1.5%;
-		padding: 20px 2.5%;
+		width: 26%;
+		margin: 1% 15px;
+		padding: 20px 20px;
 		display: inline-block;
 		text-align: center;
-		border:1px solid #FC7D26;
+		border:1px solid #D66110;
+		position: relative;
+	}
+	.optionDiv #newProduct{
+		position: absolute;
+		left: -15px;
+		top: -20px;
+		background: #FF555C;
+		color: #fff;
+		width: 60px;
+		height: 60px;
+		line-height: 60px;
+		border-radius: 50px;
 	}
 	.optionDiv img{
 		max-width: 100%;
@@ -165,7 +184,7 @@ section{
 		margin: 10px 0px;
 	}
 	.optionDiv #price{
-		font-size: 30px;
+		font-size: 25px;
 		color: #D66110;
 		margin: 10px 0px;
 	}

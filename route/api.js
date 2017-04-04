@@ -20,7 +20,7 @@ var m_fnCreateMailContent = function(szCode,objOrder){
 	//for title
 	option.content = option.content + "親愛的" + objOrder.objAddress.name.value + "您好，感謝您訂購蔬果溜溜<br>";
 	option.content = option.content + "總金額為： <span style=\"color:red\">$" + objOrder.nTotalPrice + "</span><br>";
-	option.content = option.content + "<br><hr><br> 匯款資料：中華郵政 <br>郵局代號：700 <br> 帳號：0301151-0466691 <br> 戶名：曾國舜 <br><hr><br>";
+	option.content = option.content + "<br><hr><br>若您選擇貨到付款，請忽略<br> 匯款資料：中華郵政 <br>郵局代號：700 <br> 帳號：0301151-0466691 <br> 戶名：曾國舜 <br><hr><br>";
 	option.content = option.content + "您的訂單編號為：" + szCode + "<br>您訂購資訊如下：";
 
 	//for css

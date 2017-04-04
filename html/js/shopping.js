@@ -18,8 +18,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
 		dateFirstDelivery.setDate( dateFirstDelivery.getDate() + Math.ceil(diffDays/14)*14 );
-		//return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
-		return "3/18";
+		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
 	}
 
 	$scope.fnBKshadowClose = function(){
@@ -44,29 +43,36 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 
 			isSelected : false,
 			nTotalPrice : 0,
-			
+			nDeliveryPrice : 0,
+
 			options : {
 				ForTesting : {
 					title : "活力水果嘗鮮箱",
+					originalPrice : 599,
 					price : 399,
-					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(番茄、葡萄、芭樂、李子、棗子、哈密瓜、蘋果、西洋梨、甜桃、茂谷蜜柑、甜桃、百香果)，一箱5台斤±5%。(含運)",
+					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、葡萄柚、鳳梨、蓮霧、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、西洋梨、茂谷蜜柑、百香果、香蕉)，一箱5台斤±5%。(含運)",
 					photo : "option1.jpg",
 					count : 0,
+					isNewProduct : false,
 				},
 				ForFamily : {
 					title : "活力水果家庭箱",
+					originalPrice : 899,
 					price : 699,
-					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(番茄、葡萄、芭樂、李子、棗子、哈密瓜、蘋果、西洋梨、甜桃、茂谷蜜柑、甜桃、百香果)，一箱10台斤±5%。(含運)",
+					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、葡萄柚、鳳梨、蓮霧、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、西洋梨、茂谷蜜柑、百香果、香蕉)，一箱10台斤±5%。(含運)",
 					photo : "option2.jpg",
 					count : 0,
+					isNewProduct : false,
 				},
-				/*ForEmpire : {
-					title : "尊榮不凡",
-					price : 1099,
-					detail : "茂谷蜜柑30A頂級禮盒裝，一箱9士5%台斤(約18顆)。塑膠套封裝可存放一、兩個月，但建議盡早食用，風味較佳。",
-					photo : "option3.jpg",
+				ForLazy : {
+					title : "懶人包專屬水果",
+					originalPrice : 599,
+					price : 399,
+					detail : "不用切、削，內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、蓮霧、無籽葡萄、番茄、草莓、芭樂、棗子、香蕉、櫻桃)，一箱3台斤±5%(含運)",
+					photo : "option3.png",
 					count : 0,
-				},*/
+					isNewProduct : true,
+				},
 			},
 
 			fnCountOrange : function(){
@@ -106,6 +112,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 			},
 		};
 	//order
+		var nEveryPackagePrice = 30;
 		$scope.objOrder = {
 			isShow : false,
 			szError : "",
@@ -113,6 +120,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				name : {
 					title : "姓名",
 					value : "",
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
 						if( $scope.objOrder.columns.name.value.length == 0 ){
@@ -124,6 +133,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				phone : {
 					title : "手機",
 					value : "",
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
 						var szPhone = $scope.objOrder.columns.phone.value;
@@ -144,6 +155,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				email : {
 					title : "電子郵件",
 					value : "",
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
 						var szEmail = $scope.objOrder.columns.email.value;
@@ -159,25 +172,73 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				address : {
 					title : "宅配地址",
 					value : "",
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
 						return true;
 					},
 				},
-				option_delivery : {
-					title : "宅配選項",
+				option_receive_delivery : {
+					title : "收貨時間",
 					value : "",
+					options : ["不指定", "早上 (09:00~12:00)", "午後 (12:00~17:00)", "晚間 (17:00~20:00)"],
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
 						return true;
 					},
 				},
-				ATM : {
-					title : "ATM匯款後五碼",
+				option_pay : {
+					title : "付款方式",
 					value : "",
+					options : ["ATM匯款", "貨到付款"],
+					isEdit : true,
+					isShow : true,
 					isNecessary : true,
 					fnIsValid : function(){
-						var szATMfive = $scope.objOrder.columns.ATM.value;
+						return true;
+					},
+					fnChanged : function(){
+						var szOptionPay = $scope.objOrder.columns.option_pay.value;
+
+						if( szOptionPay == "" ){
+							return;
+						}
+
+						if( szOptionPay == "ATM匯款" ){
+							$scope.objOrder.columns.pay_info.title = "ATM後五碼";
+							$scope.objOrder.columns.pay_info.value = "";
+							$scope.objOrder.columns.pay_info.isNecessary = true;
+							$scope.objOrder.columns.pay_info.isShow = true;
+							$scope.objOrder.columns.pay_info.isEdit = true;
+							return;
+						}
+
+						if( szOptionPay == "貨到付款" ){
+							$scope.objOrder.columns.pay_info.title = "提醒您";
+							$scope.objOrder.columns.pay_info.value = "貨到付款每箱需要加" + nEveryPackagePrice + "元";
+							$scope.objOrder.columns.pay_info.isNecessary = false;
+							$scope.objOrder.columns.pay_info.isShow = true;
+							$scope.objOrder.columns.pay_info.isEdit = false;
+							return;
+						}
+					},
+				},
+				pay_info : {
+					title : "擴充選項",
+					value : "",
+					isEdit : false,
+					isShow : false,
+					isNecessary : true,
+					fnIsValid : function(){
+						var szOptionPay = $scope.objOrder.columns.option_pay.value;
+						if( szOptionPay == "" || szOptionPay == "貨到付款" ){
+							return true;
+						}
+
+						var szATMfive = $scope.objOrder.columns.pay_info.value;
 
 						if( szATMfive.length != 5 ){
 							return false;
@@ -196,6 +257,8 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				comment : {
 					title : "寶貴建議",
 					value : "",
+					isEdit : true,
+					isShow : true,
 					isNecessary : false,
 					fnIsValid : function(){
 						return true;
@@ -253,8 +316,10 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 				$scope.objOrder.isFinish = true;
 				
 				//product
+				var nTotalCount = 0;
 				for( var option in $scope.objOrange.options ){
 					if( $scope.objOrange.options[option].count != 0 ){
+						nTotalCount = nTotalCount + $scope.objOrange.options[option].count;
 						var orderTmp = {
 							name : $scope.objOrange.options[option].title,
 							price : $scope.objOrange.options[option].price,
@@ -265,8 +330,14 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http){
 					}
 				}
 
+				//add delivery price
+				var szOptionPay = $scope.objOrder.columns.option_pay.value;
+				if( szOptionPay == "貨到付款" ){
+					$scope.objOrange.nDeliveryPrice = nTotalCount * nEveryPackagePrice;
+				}
+
 				//total price
-				$scope.objMyOrder.nTotalPrice = $scope.objOrange.nTotalPrice;
+				$scope.objMyOrder.nTotalPrice = $scope.objOrange.nTotalPrice + $scope.objOrange.nDeliveryPrice;
 
 				//address
 				for( var key in $scope.objOrder.columns ){

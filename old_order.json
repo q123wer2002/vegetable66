@@ -1,0 +1,88 @@
+{
+	"order_1489057700143198": {
+		"nTotalPrice": 399,
+		"aryProduct": [
+			{
+				"name": "活力水果嘗鮮箱",
+				"price": 399,
+				"photo": "option1.jpg",
+				"count": 1,
+				"$$hashKey": "object:64"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "張玲華"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0918243330"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "chpplen@gmail.com"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "新竹市新莊街79巷11號3樓"
+			},
+			"option_delivery": {
+				"title": "宅配選項",
+				"value": "晚間 (17:00~20:00)"
+			},
+			"ATM": {
+				"title": "ATM匯款後五碼",
+				"value": "75516"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": "好吃嗎"
+			}
+		},
+		"create_date": "2017/3/9 下午7:08:21"
+	},
+	"order_1489057842400382": {
+		"nTotalPrice": 699,
+		"aryProduct": [
+			{
+				"name": "活力水果家庭箱",
+				"price": 699,
+				"photo": "option1.jpg",
+				"count": 1,
+				"$$hashKey": "object:64"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "張國勳"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0939613920"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "chpplen@gmail.com"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "台中市豐原區三村里19鄰西勢路253巷8弄8號"
+			},
+			"option_delivery": {
+				"title": "宅配選項",
+				"value": "早上 (09:00~12:00)"
+			},
+			"ATM": {
+				"title": "ATM匯款後五碼",
+				"value": "75516"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": "爽哦"
+			}
+		},
+		"create_date": "2017/3/9 下午7:10:44"
+	}
+}

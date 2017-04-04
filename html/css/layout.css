@@ -25,6 +25,7 @@ hr{width: 50%;border-color: rgba(255,255,255,0.3);}
 	#fbLink{margin:38px 0px 0px 40px;font-size: 27px;}
 	#buyNow{float: right;padding: 7px 25px;margin: 30px;color: #fff;background-color: #C00000;}
 	#buyNow:hover{background-color: #DA5050;}
+	#temp{float: right;padding: 7px 25px;margin: 30px;color: #fff;background-color: #C00000;}
 .body{position: relative;width: 1024px;margin: auto;height: auto;margin-top: 15px;margin-bottom: 50px;}
 .footer{width: 100%;height: auto;position: relative;background: #888888;bottom: 0px;text-align: center;color: #ccc;}
 	.footer .socialLinks {margin: 0 auto;padding-top: 30px;text-align: center;}
