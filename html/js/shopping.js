@@ -12,7 +12,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$i
 		//only SAT.
 
 		var dateTody = new Date();
-		var dateFirstDelivery = new Date("2017-03-11");
+		var dateFirstDelivery = new Date("2017-03-12");
 
 		var timeDiff = Math.abs(dateTody.getTime() - dateFirstDelivery.getTime());
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -79,28 +79,28 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$i
 
 			options : {
 				ForTesting : {
-					title : "活力水果嘗鮮箱",
-					originalPrice : 599,
-					price : 399,
-					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、葡萄柚、鳳梨、蓮霧、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、西洋梨、茂谷蜜柑、百香果、香蕉)，一箱5台斤±5%。(含運)",
+					title : "健康579水果箱",
+					//originalPrice : 599,
+					price : 599,
+					detail : "符合每天成人攝取579健康原則。(葡萄柚、鳳梨、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、茂谷蜜柑、百香果)，一箱5台斤±5%。(含運)",
 					photo : "option1.jpg",
 					count : 0,
-					isNewProduct : false,
+					isNewProduct : true,
 				},
-				ForFamily : {
+				/*ForFamily : {
 					title : "活力水果家庭箱",
 					originalPrice : 899,
 					price : 699,
-					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、葡萄柚、鳳梨、蓮霧、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、西洋梨、茂谷蜜柑、百香果、香蕉)，一箱10台斤±5%。(含運)",
+					detail : "內含3~5種當季新鮮水果，視當天採收狀況出貨。(葡萄柚、鳳梨、番茄、葡萄、芭樂、棗子、哈密瓜、蘋果、西洋梨、茂谷蜜柑、百香果、香蕉)，一箱10台斤±5%。(含運)",
 					photo : "option2.jpg",
 					count : 0,
 					isNewProduct : false,
-				},
+				},*/
 				ForLazy : {
 					title : "懶人包專屬水果",
-					originalPrice : 599,
-					price : 399,
-					detail : "不用切、削，內含3~5種當季新鮮水果，視當天採收狀況出貨。(草莓、蓮霧、無籽葡萄、番茄、草莓、芭樂、棗子、香蕉、櫻桃)，一箱3台斤±5%(含運)",
+					//originalPrice : 599,
+					price : 599,
+					detail : "不用切、削，內含3~5種當季新鮮水果，視當天採收狀況出貨。(無籽葡萄、番茄、芭樂、棗子、橘子、茂谷蜜柑)，一箱3台斤±5%(含運)",
 					photo : "option3.png",
 					count : 0,
 					isNewProduct : true,

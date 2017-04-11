@@ -91,8 +91,8 @@
 					<img ng-src="./images/shopping/orange/{{value.photo}}" />
 					<br>
 					<p>{{value.detail}}</p>
-					<p id="price"><span style="text-decoration: line-through;font-size: 20px;">原價{{value.originalPrice | currency:"$":0}}</span></p>
-					<p id="price">開幕特價{{value.price | currency:"$":0}}</p>
+					<!-- <p id="price"><span style="text-decoration: line-through;font-size: 20px;">原價{{value.originalPrice | currency:"$":0}}</span></p> -->
+					<p id="price">{{value.price | currency:"$":0}}</p>
 					<select id="count" ng-model="value.count" ng-options="i for i in [0,1,2,3,4,5,6,7,8,9,10]" ng-change="objOrange.fnCountOrange()">
 					</select>
 				</li>
