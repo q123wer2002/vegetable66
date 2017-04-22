@@ -323,5 +323,52 @@
 			}
 		},
 		"create_date": "2017/4/9 下午11:01:52"
+	},
+	"order_1492395035776535": {
+		"nTotalPrice": 599,
+		"aryProduct": [
+			{
+				"name": "健康579水果箱",
+				"price": 599,
+				"photo": "option1.jpg",
+				"count": 1,
+				"$$hashKey": "object:81"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "W"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0963101923"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "C1988521@gmail.com"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "eSd"
+			},
+			"option_receive_delivery": {
+				"title": "收貨時間",
+				"value": "不指定"
+			},
+			"option_pay": {
+				"title": "付款方式",
+				"value": "ATM匯款"
+			},
+			"pay_info": {
+				"title": "ATM後五碼",
+				"value": "11233"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": ""
+			}
+		},
+		"create_date": "2017/4/17 上午10:10:15"
 	}
 }
