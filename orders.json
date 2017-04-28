@@ -370,5 +370,52 @@
 			}
 		},
 		"create_date": "2017/4/17 上午10:10:15"
+	},
+	"order_1493043833309439": {
+		"nTotalPrice": 629,
+		"aryProduct": [
+			{
+				"name": "健康579水果箱",
+				"price": 599,
+				"photo": "option1.jpg",
+				"count": 1,
+				"$$hashKey": "object:101"
+			}
+		],
+		"objAddress": {
+			"name": {
+				"title": "姓名",
+				"value": "王淑貞"
+			},
+			"phone": {
+				"title": "手機",
+				"value": "0913-577-786"
+			},
+			"email": {
+				"title": "電子郵件",
+				"value": "shujan6625@yahoo.com.tw"
+			},
+			"address": {
+				"title": "宅配地址",
+				"value": "桃園市桃園區莊敬路二段179號3樓"
+			},
+			"option_receive_delivery": {
+				"title": "收貨時間",
+				"value": "不指定"
+			},
+			"option_pay": {
+				"title": "付款方式",
+				"value": "貨到付款"
+			},
+			"pay_info": {
+				"title": "提醒您",
+				"value": "貨到付款每箱需要加30元"
+			},
+			"comment": {
+				"title": "寶貴建議",
+				"value": ""
+			}
+		},
+		"create_date": "Mon Apr 24 2017 22:23:23 GMT+0800 (CST)"
 	}
 }

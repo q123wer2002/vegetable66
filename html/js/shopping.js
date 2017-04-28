@@ -11,14 +11,15 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$i
 		//two weeks one delivery, start from 3/11, 3/25,...
 		//only SAT.
 
-		var dateTody = new Date();
+		/*var dateTody = new Date();
 		var dateFirstDelivery = new Date("2017-03-12");
 
 		var timeDiff = Math.abs(dateTody.getTime() - dateFirstDelivery.getTime());
 		var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
 		dateFirstDelivery.setDate( dateFirstDelivery.getDate() + Math.ceil(diffDays/14)*14 );
-		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();
+		return (dateFirstDelivery.getMonth()+1) + "/" + dateFirstDelivery.getDate();*/
+		return "5/14"
 	}
 
 	//count Reciprocal time
