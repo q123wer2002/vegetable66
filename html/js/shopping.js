@@ -102,7 +102,7 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$i
 					//originalPrice : 599,
 					price : 599,
 					detail : "不用切、削，內含4~6種當季新鮮水果，視當天採收狀況出貨。(香蕉、李子、甜桃、荔枝、龍眼、百香果、無籽葡萄、番茄、芭樂、棗子、橘子、茂谷蜜柑)(含運)",
-					photo : "option3.jpg",
+					photo : "option3.png",
 					count : 0,
 					isNewProduct : true,
 				},

@@ -8,6 +8,7 @@ vegefruit66.controller('activityController', function($scope,$rootScope){
 			activities2: "./activities/activity2.html",
 			activities3: "./activities/activity3.html",
 			activities4: "./activities/activity4.html",
+			activities5: "./activities/activity5.html",
 		};
 	$scope.now = $scope.activitiesPages['main']
 
