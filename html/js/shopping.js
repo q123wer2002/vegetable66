@@ -47,7 +47,16 @@ vegefruit66.controller('shoppingController', function($scope,$rootScope,$http,$i
 		}
 		var nTotalSeconds = Math.floor(((date_nextDelivery-date_now)/1000));
 		var objReciprocalTime = fnSecondsToTime(nTotalSeconds);
-		return objReciprocalTime;
+		var szRestTime = "";
+
+		if( objReciprocalTime['h'] > 24 ){
+			objReciprocalTime['d'] = Math.floor(objReciprocalTime['h']/24);
+			objReciprocalTime['h'] = objReciprocalTime['h']%24;
+			szRestTime += objReciprocalTime['d'] + "天";
+		}
+
+		szRestTime += objReciprocalTime['h'] + ":" + objReciprocalTime['m'] + ":" + objReciprocalTime['s'];
+		return szRestTime;
 	}
 	//interval to count reciprocal time
 	$interval(function(){
