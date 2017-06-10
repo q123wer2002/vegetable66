@@ -9,6 +9,7 @@ var api = require('./route/api');
 //end lib
 
 //setting
+app.use('/static', express.static('html'));
 app.use(express.static('html'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
