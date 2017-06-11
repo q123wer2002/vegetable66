@@ -1890,8 +1890,8 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #1abc9c;
-		color: #fff !important;
+		color: #FFF !important;
+		text-shadow: 0px 0px 30px #548235;
 	}
 
 		input[type="submit"]:hover,
@@ -1949,8 +1949,9 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #3498db;
-			color: #fff !important;
+			background-color: #34988b;
+			color: #FFF !important;
+			text-shadow: 0px 0px 30px #548235;
 		}
 
 			input[type="submit"].special:hover,
@@ -2652,8 +2653,8 @@
 			.wrapper.style1 input[type="button"],
 			.wrapper.style1 button,
 			.wrapper.style1 .button {
-				background-color: #1abc9c;
-				color: #fff !important;
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				.wrapper.style1 input[type="submit"]:hover,
@@ -2711,8 +2712,8 @@
 				.wrapper.style1 input[type="button"].special,
 				.wrapper.style1 button.special,
 				.wrapper.style1 .button.special {
-					background-color: #1abc9c;
-					color: #fff !important;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 			.wrapper.style1 label {
@@ -2754,7 +2755,7 @@
 
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
-				background-color: #1abc9c;
+				background-color: rgba(84,130,53,0.7);
 				border-color: #1abc9c;
 				color: #fff;
 			}
@@ -2860,8 +2861,8 @@
 			.wrapper.style2 input[type="button"],
 			.wrapper.style2 button,
 			.wrapper.style2 .button {
-				background-color: #1abc9c;
-				color: #fff !important;
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				.wrapper.style2 input[type="submit"]:hover,
@@ -2919,8 +2920,9 @@
 				.wrapper.style2 input[type="button"].special,
 				.wrapper.style2 button.special,
 				.wrapper.style2 .button.special {
-					background-color: #3498db;
-					color: #fff !important;
+					background-color: #34988b;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 			.wrapper.style2 label {
@@ -3295,11 +3297,14 @@
 
 	#banner {
 		margin-top: 15px;
-		background-color: #3498db;
+		background:url("http://localhost/images/activities/banner.jpg");
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		background-position: center;
 		color: rgba(255, 255, 255, 0.75);
 		text-align: center;
 		cursor: default;
-		padding:100px;
+		padding:120px;
 	}
 
 		#banner input, #banner select, #banner textarea {
@@ -3340,8 +3345,8 @@
 		#banner input[type="button"],
 		#banner button,
 		#banner .button {
-			background-color: #1abc9c;
-			color: #fff !important;
+			color: #FFF !important;
+			text-shadow: 0px 0px 30px #548235;
 		}
 
 			#banner input[type="submit"]:hover,
@@ -3365,9 +3370,9 @@
 			#banner input[type="button"].alt,
 			#banner button.alt,
 			#banner .button.alt {
-				background-color: transparent;
-				box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-				color: #fff !important;
+				box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.28);
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				#banner input[type="submit"].alt:hover,
@@ -3375,7 +3380,7 @@
 				#banner input[type="button"].alt:hover,
 				#banner button.alt:hover,
 				#banner .button.alt:hover {
-					background-color: rgba(255, 255, 255, 0.075);
+					background-color: rgba(179,183,46,0.5);
 				}
 
 				#banner input[type="submit"].alt:active,
@@ -3788,8 +3793,8 @@
 			.post.style1 input[type="button"],
 			.post.style1 button,
 			.post.style1 .button {
-				background-color: #1abc9c;
-				color: #fff !important;
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				.post.style1 input[type="submit"]:hover,
@@ -3847,12 +3852,12 @@
 				.post.style1 input[type="button"].special,
 				.post.style1 button.special,
 				.post.style1 .button.special {
-					background-color: #1abc9c;
-					color: #fff !important;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 			.post.style1.invert {
-				background-color: #1abc9c;
+				background-color: rgba(84,130,53,0.7);
 				color: rgba(255, 255, 255, 0.75);
 			}
 
@@ -3900,8 +3905,9 @@
 					.post.style1.invert button.alt,
 					.post.style1.invert .button.alt {
 						background-color: transparent;
-						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-						color: #fff !important;
+						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.28);
+						color: #FFF !important;
+						text-shadow: 0px 0px 30px #548235;
 					}
 
 						.post.style1.invert input[type="submit"].alt:hover,
@@ -3960,7 +3966,7 @@
 						}
 
 				.post.style1.invert .image {
-					background-color: #1abc9c;
+					background-color: rgba(84,130,53,0.7);
 				}
 
 		.post.style2 {
@@ -4002,8 +4008,8 @@
 			.post.style2 input[type="button"],
 			.post.style2 button,
 			.post.style2 .button {
-				background-color: #1abc9c;
-				color: #fff !important;
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				.post.style2 input[type="submit"]:hover,
@@ -4061,8 +4067,9 @@
 				.post.style2 input[type="button"].special,
 				.post.style2 button.special,
 				.post.style2 .button.special {
-					background-color: #3498db;
-					color: #fff !important;
+					background-color: #34988b;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 			.post.style2.invert {
@@ -4104,8 +4111,8 @@
 				.post.style2.invert input[type="button"],
 				.post.style2.invert button,
 				.post.style2.invert .button {
-					background-color: #1abc9c;
-					color: #fff !important;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 					.post.style2.invert input[type="submit"]:hover,
@@ -4130,8 +4137,9 @@
 					.post.style2.invert button.alt,
 					.post.style2.invert .button.alt {
 						background-color: transparent;
-						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-						color: #fff !important;
+						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.28);
+						color: #FFF !important;
+						text-shadow: 0px 0px 30px #548235;
 					}
 
 						.post.style2.invert input[type="submit"].alt:hover,
@@ -4232,8 +4240,8 @@
 			.post.style3 input[type="button"],
 			.post.style3 button,
 			.post.style3 .button {
-				background-color: #1abc9c;
-				color: #fff !important;
+				color: #FFF !important;
+				text-shadow: 0px 0px 30px #548235;
 			}
 
 				.post.style3 input[type="submit"]:hover,
@@ -4291,8 +4299,9 @@
 				.post.style3 input[type="button"].special,
 				.post.style3 button.special,
 				.post.style3 .button.special {
-					background-color: #9b59b6;
-					color: #fff !important;
+					background-color: #9b5986;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 			.post.style3.invert {
@@ -4334,8 +4343,8 @@
 				.post.style3.invert input[type="button"],
 				.post.style3.invert button,
 				.post.style3.invert .button {
-					background-color: #1abc9c;
-					color: #fff !important;
+					color: #FFF !important;
+					text-shadow: 0px 0px 30px #548235;
 				}
 
 					.post.style3.invert input[type="submit"]:hover,
@@ -4360,8 +4369,9 @@
 					.post.style3.invert button.alt,
 					.post.style3.invert .button.alt {
 						background-color: transparent;
-						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
-						color: #fff !important;
+						box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.28);
+						color: #FFF !important;
+						text-shadow: 0px 0px 30px #548235;
 					}
 
 						.post.style3.invert input[type="submit"].alt:hover,

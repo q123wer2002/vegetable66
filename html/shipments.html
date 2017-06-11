@@ -14,20 +14,32 @@
 
 
 	<!-- Load specific javascript or css -->
-	<script type="text/javascript" src="./js/friendShop.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/friendShop.css">
+	<script type="text/javascript" src="./js/shipments.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/shipments.css">
 	<!-- End to load -->
 </head>
-<body ng-controller="friendShopController">
-	<!-- ng-include="$root.includePages.top" -->
+<body ng-controller="shipmentsController">
 	<div class="header" ng-include="$root.includePages.top" ></div>
 	
 	<!-- index start -->
 	<div class="body">
+		<div class="DeliveryArea" ng-repeat="delivery in aryDelivery">
+			<h1>{{delivery.title}}</h1>
+			<a href="{{delivery.fblink}}" class="deliveryAreaLink" target="_new" title="粉絲團更多">
+				<ul ng-repeat="fruit in delivery.aryFruit">
+					<li>
+						<span>{{fruit.name}}</span>
+						<img src="{{fruit.photo}}" />
+						<hr class="verticalLine" ng-if="$index != delivery.aryFruit.length-1">
+					</li>
+				</ul>
+				<a href="{{delivery.fblink}}" target="_new" class="fbLink" >到粉絲團看更多..</a>
+			</a>
+		</div>
 	</div>
 	<!-- end index -->
 
-	<!-- ng-include="$root.includePages.footer" -->
+	<!--  -->
 	<div class="footer" ng-include="$root.includePages.footer"></div>
 </body>
 </html>

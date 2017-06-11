@@ -1,0 +1,56 @@
+.deliveryAreaLink{
+	position: relative;
+}
+.DeliveryArea{
+	position: relative;
+	width: 90%;
+	padding: 0px 30px;
+	border: 1px solid #fff;
+	margin-bottom: 50px;
+}
+.deliveryAreaLink:hover .DeliveryArea{
+}
+.DeliveryArea h1{
+	color: #000;
+	font-size: 22px;
+	font-weight: 800;
+	margin-bottom: 15px;
+}
+.DeliveryArea ul{
+	position: relative;
+	margin: 0px 0px 0px 30px;
+	display: inline-block;
+}
+.DeliveryArea ul li{
+	position: relative;
+	background: rgba(84,130,53,0.7);
+	list-style: none;
+	text-align: center;
+	margin: 0px 20px;
+}
+.DeliveryArea ul li span{
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 30px;
+}
+.DeliveryArea ul li img{
+	width: 280px;
+	display: block;
+}
+.DeliveryArea ul li .verticalLine{
+	position: absolute;
+	top: 0px;
+	right: -37px;
+	width: 0px;
+	height: 210px;
+	border-left: 1px solid rgba(192,0,0,0.5);
+}
+.DeliveryArea .fbLink{
+	position: absolute;
+	right: 70px;
+	bottom: -20px;
+	font-size: 15px;
+	font-weight: 500;
+	color: blue;
+}
